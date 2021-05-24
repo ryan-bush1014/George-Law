@@ -1,0 +1,313 @@
+:root {
+  --main-bg: #333333;
+  --dark-bg: #111111;
+  --appear-time: 1s;
+  --slow-time: 2s;
+}
+
+a {
+  color: white;
+}
+
+/* Margin is set to stop white border around page,
+   width and height are set to give a sized ancestor
+   for relatively sized elements */
+
+html, body {
+  scroll-behavior: smooth;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg);
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+/* Landing background image, subject to parallax
+   through parallax.js (automated margin-top) */
+
+.banner {
+  top: 0;
+  width: 100%;
+  height: calc(100vh - 45pt);
+  position: fixed;
+  filter: blur(10px) saturate(200%);
+  background-image: url("../assets/building.jpg");
+  background-attachment: scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  text-align: center;
+}
+
+/* .down-arrow {
+  position: absolute;
+  bottom: 0;
+  padding: 0.2vh;
+  font-size: 700%;
+  transform: translateX(-50%);
+  color: white;
+  text-decoration: none; 
+} */
+
+/* Convenient way to increase size of certain letters
+   (e.g. *G*eorge *R*adojcic) */
+
+.emph-font {
+  font-size: 150%;
+}
+
+/* Main content of page, overlaps banner when scrolled */
+
+.sub-content {
+  z-index: 1;
+  background-color: var(--main-bg);
+  position: absolute;
+  width: 100%;
+  top: calc(100% - 41.5pt);
+}
+
+/* Tool bar to navigate to different parts of the site
+   NOTE: this has a sticky position so that it is
+   accessible while scrolling */
+
+.nav-bar {
+  z-index: 2;
+  text-align: center;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-backdrop-filter: saturate(500%) blur(15px) brightness(100%);
+  backdrop-filter: saturate(500%) blur(15px) brightness(100%);
+}
+
+/* .nav-bar-wrapper {
+  position: absolute;
+  bottom: 0;
+} */
+
+.nav-bar a {
+  letter-spacing: 2pt;
+  font-size: 11pt;
+  text-transform: uppercase;
+  flex-grow: 1;
+  flex-basis: auto;
+  background-color: #222222DA;
+  color: white;
+  position: relative;
+  /* min-width: 100%; */
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  background-color: #111111EA;
+}
+
+.sub-content-center {
+  width: 100%;
+  position: relative;
+  /* margin-top: 65pt; */
+}
+
+.section {
+  letter-spacing: 8pt;
+  text-transform: uppercase;
+  position: relative;
+  /* opacity: 0; */
+  transition: all var(--slow-time);
+}
+
+.section.appeared {
+  opacity: 1;
+  letter-spacing: 5pt;
+}
+
+.section span {
+  position: absolute;
+  top: -80px;
+}
+
+h2 {
+  text-align: center;
+  /* padding: 20px; */
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+hr {
+  width: 20%;
+  /* opacity: 0; */
+  transition: all var(--slow-time);
+}
+
+hr.appeared {
+  width: 60%;
+  opacity: 1;
+}
+
+figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  /* opacity: 0; */
+  transition: all var(--appear-time);
+}
+
+.invis {
+  opacity: 0;
+}
+
+figure.appeared {
+  opacity: 1;
+}
+
+.caption {
+  float: left;
+  margin: 0;
+  padding: 30px;
+  word-wrap: break-word;
+  flex: 1 1 50%;
+  font-size: 16pt;
+  text-align: justify;
+}
+
+.caption h2 {
+  font-size: 20pt;
+  letter-spacing: 3pt;
+  text-transform: uppercase;
+}
+
+.caption p {
+  text-indent: 40px;
+}
+
+.fig-img img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
+
+figure h2 {
+  text-align: left;
+}
+
+.reverse-fig h2 {
+  text-align: right;
+}
+
+.fig-img {
+  width: 100%;
+  max-width: 100%;
+  /* outline: 10px solid magenta;
+  outline-offset: -10px; */
+  flex: 2 2 50%;
+}
+
+.caption li {
+  line-height: 200%;
+  font-size: 16pt;
+  text-align: left;
+}
+
+.caption ul {
+  margin: 0;
+}
+
+.list {
+  padding-top: 0;
+}
+
+/* Main title of page */
+
+.main-title {
+  user-select: none;
+  position: fixed;
+  top: calc(50vh - 116.5pt);
+  left: 50%;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 24pt;
+  text-shadow: 0.5vh 0.5vh 0.5vh black;
+  transform: translate3d(-50%, 0, 0);
+  font-weight: bold;
+  /* animation: 1s ease-out 0s 1 fadeSlideDown; */
+}
+
+/* @media (max-width: 992px) {
+  .main-title {
+  font-size: 4vw !important;
+  }
+} */
+
+/* @keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    margin-top: -7vh;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+} */
+
+.main-title * {
+  margin-top: 0.2vh;
+  margin-bottom: 0.2vh;
+}
+
+.gmap {
+  width: 100%;
+  height: 300pt;
+  /* filter: invert(83%); */
+}
+
+footer {
+  background-color: var(--dark-bg);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  text-indent: 0;
+  text-align: center;
+  font-size: 12pt;
+}
+
+@media (max-width: 1100px) {
+  /* .caption {
+    text-align: left;
+  } */
+
+  .reverse-fig h2 {
+    text-align: left;
+  }
+
+  hr.appeared {
+    width: 90%;
+    opacity: 1;
+  }
+
+  figure {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    /* text-align: center; */
+  }
+  .reverse-fig {
+    flex-direction: column-reverse;
+  }
+
+  .fig-img img {
+    border-radius: 0px;
+  }
+}

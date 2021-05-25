@@ -13,6 +13,9 @@ let callback = (entries, observer) => {
         if (entry.isIntersecting) {
             entry.target.classList.remove("invis");
             entry.target.classList.add("appeared");
+        } else if (!entry.isIntersecting) {
+            entry.target.classList.remove("appeared");
+            entry.target.classList.add("invis");
         }
     });
 };
@@ -22,7 +25,7 @@ let callback = (entries, observer) => {
 let observer = new IntersectionObserver(callback, options);
 
 function addObserver(elems) {
-    for(let i = 0; i < elems.length; ++i) {
+    for (let i = 0; i < elems.length; ++i) {
         elems[i].classList.add("invis");
         observer.observe(elems[i]);
     }

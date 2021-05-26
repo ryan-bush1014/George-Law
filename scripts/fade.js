@@ -12,7 +12,6 @@ let callback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.remove("invis");
-            entry.target.classList.add("appeared");
         }
     });
 };
@@ -28,6 +27,9 @@ function addObserver(elems) {
     }
 }
 
-addObserver(figs);
-addObserver(secs);
-addObserver(lines);
+// Check if the media query matches or is not available.
+if (!mediaQuery.matches) {
+    addObserver(figs);
+    addObserver(secs);
+    addObserver(lines);
+}

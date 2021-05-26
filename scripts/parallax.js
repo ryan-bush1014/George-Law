@@ -6,16 +6,16 @@ let bannerContent = document.querySelector(".main-title");
 function parallax() {
     let offset = (window.scrollY / 2).toString() + "px";
     banner.style.backgroundPositionY = "-" + offset;
-    bannerContent.style.transform = `translate3d(-50%, ${offset}, 0)`;
+    bannerContent.style.transform = `translate3d(-50%, ${offset}, 0) translateY(-50%)`;
 }
 
-if (!window.mobileCheck()) {
+// https://since1979.dev/respecting-prefers-reduced-motion-with-javascript-and-react/
+// Grab the prefers reduced media query.
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (!window.mobileCheck() && !mediaQuery.matches) {
     // banner.style.height = "calc(100% - 45pt)";
-    banner.style.position = "absolute";
-    bannerContent.style.position = "relative";
-    banner.style.backgroundAttachment = "fixed";
+    banner.classList.add("parallax");
+    bannerContent.classList.add("parallax");
     document.addEventListener("scroll", parallax, { passive: true });
-} else {
-    bannerContent.style.marginTop = "-40pt";
-    bannerContent.style.fontSize = "18pt";
 }

@@ -13,9 +13,6 @@ let callback = (entries, observer) => {
         if (entry.isIntersecting) {
             entry.target.classList.remove("invis");
             entry.target.classList.add("appeared");
-        } else if (!entry.isIntersecting) {
-            entry.target.classList.remove("appeared");
-            entry.target.classList.add("invis");
         }
     });
 };

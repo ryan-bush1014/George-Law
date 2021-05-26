@@ -139,15 +139,35 @@ h2 {
   font-weight: bold;
 }
 
-hr {
+
+/* hr {
   width: 20%;
-  /* opacity: 0; */
   transition: all var(--slow-time);
 }
 
 hr.appeared {
   width: 60%;
   opacity: 1;
+} */
+
+.section::after{
+  content: "";
+  width: 20%;
+  height: 0.1em;
+  background-color: white;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-top: 0.5em;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all var(--slow-time);
+}
+
+.section.appeared::after{
+  width: 60%;
+  opacity: 1;
+
 }
 
 figure {
@@ -292,9 +312,8 @@ footer p {
     text-align: left;
   }
 
-  hr.appeared {
+  .section.appeared::after {
     width: 90%;
-    opacity: 1;
   }
 
   figure {

@@ -110,14 +110,9 @@ html, body {
   background-color: rgba(10, 10, 10, 0.9);
 }
 
-.links a:hover, .links a:focus {
+.links a:focus {
   background-color: rgba(40, 40, 40, 0.75);
 }
-
-/* .nav-bar-wrapper {
-  position: absolute;
-  bottom: 0;
-} */
 
 .links>* {
   letter-spacing: 2pt;
@@ -400,5 +395,11 @@ footer p {
 @media (prefers-reduced-motion) {
   .nav-bar>* {
     transition: none;
+  }
+}
+
+@media (hover: hover) {
+  .links a:hover {
+    background-color: rgba(40, 40, 40, 0.75);
   }
 }

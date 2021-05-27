@@ -2,6 +2,7 @@
   --main-bg: #333333;
   --dark-bg: #111111;
   --text-color: rgb(230, 230, 230);
+  --text-accent: rgb(255, 255, 255);
   --appear-time: 1s;
   --slow-time: 2s;
 }
@@ -109,7 +110,7 @@ html, body {
   flex-grow: 1;
   flex-basis: auto;
   background-color: rgba(17, 17, 17, 0.75);
-  color: var(--text-color);
+  color: var(--text-accent);
   position: relative;
   /* min-width: 100%; */
   text-decoration: none;
@@ -136,6 +137,7 @@ html, body {
   position: relative;
   transition: all var(--slow-time);
   letter-spacing: 5pt;
+  color: var(--text-accent);
 }
 
 .section span {
@@ -154,7 +156,7 @@ h2 {
   content: "";
   width: 60%;
   height: 0.1em;
-  background-color: var(--text-color);
+  background-color: var(--text-accent);
   display: block;
   position: absolute;
   left: 50%;
@@ -252,6 +254,7 @@ figure h2 {
   font-weight: bold;
   margin-top: -40px;
   font-size: 24pt;
+  color: var(--text-accent);
   /* animation: 1s ease-out 0s 1 fadeSlideDown; */
 }
 

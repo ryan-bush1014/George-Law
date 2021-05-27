@@ -240,11 +240,11 @@ figure h2 {
   user-select: none;
   position: fixed;
   top: calc(50vh - 3rem);
-  left: 50%;
+  width: 100%;
   text-align: center;
   font-family: "Cinzel", serif;
   text-shadow: 0.5vh 0.5vh 0.5vh black;
-  transform: translate3d(-50%, 0, 0) translateY(-50%);
+  transform: translate3d(0, 0, 0) translateY(-50%);
   font-weight: bold;
   margin-top: -40px;
   font-size: 24pt;

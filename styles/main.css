@@ -119,7 +119,7 @@ html, body {
 
 .nav-bar a:hover,
 .nav-bar a:focus {
-  background-color: rgba(17, 17, 17, 0.9);
+  background-color: rgba(40, 40, 40, 0.75);
 }
 
 .sub-content-center {

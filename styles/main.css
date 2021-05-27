@@ -102,6 +102,18 @@ html, body {
   backdrop-filter: saturate(500%) blur(15px) brightness(100%);
 }
 
+.links.blur>* {
+  background-color: rgba(17, 17, 17, 0.75);
+}
+
+.hamburger-container.blur {
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+.links a:hover, .links a:focus {
+  background-color: rgba(40, 40, 40, 0.75);
+}
+
 /* .nav-bar-wrapper {
   position: absolute;
   bottom: 0;
@@ -124,10 +136,6 @@ html, body {
 
 .hamburger-container {
   display: none;
-}
-
-.links a:hover, .links a:focus {
-  background-color: rgba(40, 40, 40, 0.75);
 }
 
 .sub-content-center {

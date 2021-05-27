@@ -7,9 +7,6 @@ function cssPropertyValueSupported(prop, value) {
 
 if (CSS.supports('backdrop-filter', 'blur(10px)')) {
     console.log("CSS \'backdrop-filter\' supported - upgraded styles implemented");
-    document.querySelector(".hamburger-container").style.backgroundColor = "rgba(10, 10, 10, 0.9)";
-    let links = document.querySelector(".links").children;
-    for (let i = 0; i < links.length; ++i) {
-        links[i].style.backgroundColor = "rgba(17, 17, 17, 0.75)";
-    }
+    document.querySelector(".hamburger-container").classList.add("blur");
+    document.querySelector(".links").classList.add("blur");
 }

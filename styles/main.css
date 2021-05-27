@@ -1,12 +1,13 @@
 :root {
   --main-bg: #333333;
   --dark-bg: #111111;
+  --text-color: rgb(230, 230, 230);
   --appear-time: 1s;
   --slow-time: 2s;
 }
 
 a {
-  color: white;
+  color: var(--text-color);
 }
 
 /* Margin is set to stop white border around page,
@@ -20,7 +21,7 @@ html, body {
   height: 100%;
   background-color: var(--main-bg);
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 /* Landing background image, subject to parallax
@@ -56,7 +57,7 @@ html, body {
   padding: 0.2vh;
   font-size: 700%;
   transform: translateX(-50%);
-  color: white;
+  color: var(--text-color);
   text-decoration: none; 
 } */
 
@@ -108,7 +109,7 @@ html, body {
   flex-grow: 1;
   flex-basis: auto;
   background-color: rgba(17, 17, 17, 0.75);
-  color: white;
+  color: var(--text-color);
   position: relative;
   /* min-width: 100%; */
   text-decoration: none;
@@ -153,7 +154,7 @@ h2 {
   content: "";
   width: 60%;
   height: 0.1em;
-  background-color: white;
+  background-color: var(--text-color);
   display: block;
   position: absolute;
   left: 50%;

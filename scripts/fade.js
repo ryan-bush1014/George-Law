@@ -29,7 +29,9 @@ function addObserver(elems) {
 
 // Check if the media query matches or is not available.
 if (!mediaQuery.matches) {
-    addObserver(figs);
+    if (!window.mobileCheck()) {
+        addObserver(figs);
+    }
     addObserver(secs);
     addObserver(lines);
 }

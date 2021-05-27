@@ -316,6 +316,7 @@ footer p {
   .hamburger-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     width: 100%;
     background-color: rgba(10, 10, 10, 0.9);
@@ -352,7 +353,7 @@ footer p {
     transform-origin: top;
     transition: transform 250ms ease-out, opacity 250ms ease-in;
     z-index: 0;
-    margin-top: -4px;
+    /* margin-top: -4px;   */
     pointer-events: none;
   }
   .open {

@@ -60,14 +60,16 @@
   </div>
   <div class="sub-content">
     <div class="nav-bar">
-      <div class="hamburger-container">
-        <div class="hamburger"
+      <a href="#menu">
+        <div id="menu" class="hamburger-container"
           onclick="document.querySelector('.links').classList.toggle('open'); document.querySelector('.nav-bar').classList.toggle('toggled');">
-          <div class="first"></div>
-          <div class="second"></div>
-          <div class="third"></div>
+          <div class="hamburger">
+            <div class="first"></div>
+            <div class="second"></div>
+            <div class="third"></div>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="links">
         <a href="#about" onclick="document.querySelector('.links').classList.toggle('open');">
           <h3>About</h3>

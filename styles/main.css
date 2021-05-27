@@ -31,7 +31,7 @@ html, body {
 .banner {
   top: 0;
   width: 100%;
-  height: calc(100vh - 45pt);
+  height: calc(100vh - 3rem);
   position: fixed;
   filter: blur(10px) saturate(200%);
   background-image: url("../assets/building.jpg");
@@ -90,6 +90,10 @@ html, body {
   position: sticky;
   top: 0;
   width: 100%;
+  height: max-content;
+}
+
+.links {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -103,7 +107,7 @@ html, body {
   bottom: 0;
 } */
 
-.nav-bar a {
+.links>* {
   letter-spacing: 2pt;
   font-size: 11pt;
   text-transform: uppercase;
@@ -115,6 +119,11 @@ html, body {
   /* min-width: 100%; */
   text-decoration: none;
   transition: background-color 400ms linear;
+  width: 100%;
+}
+
+.hamburger-container {
+  display: none;
 }
 
 .nav-bar a:hover,
@@ -301,7 +310,60 @@ footer p {
 }
 
 @media (max-width: 1100px) {
-  .caption p{
+  .nav-bar {
+    z-index: 3;
+    height: 3.5rem;
+  }
+  .hamburger-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.9);
+    -webkit-backdrop-filter: saturate(500%) blur(15px) brightness(100%);
+    backdrop-filter: saturate(500%) blur(15px) brightness(100%);
+  }
+  .hamburger {
+    --bar-width: 3rem;
+    --hamburger-height: 2rem;
+    --bar-height: calc(var(--hamburger-height) / 7);
+    padding: calc(var(--hamburger-height) / 4);
+    /* left: calc(var(--bar-width) / 2); */
+    /* top: 10px; */
+    /* left: 10px; */
+  }
+  .sub-content {
+    top: calc(100% - 3rem);
+  }
+  .sub-content-center {
+    z-index: 2;
+  }
+  .first, .second, .third {
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: white;
+    margin: var(--bar-height) 0;
+    transition: 0.4s;
+    border-radius: calc(var(--bar-height) / 2);
+  }
+  .links {
+    flex-direction: column;
+    transform: scaleY(0.5);
+    opacity: 0;
+    transform-origin: top;
+    transition: transform 250ms ease-out, opacity 250ms ease-in;
+    z-index: 0;
+    /* margin-top: -4px;   */
+    pointer-events: none;
+  }
+  .open {
+    transform: scaleY(1);
+    opacity: 1;
+    z-index: 3;
+    pointer-events: all;
+  }
+  .caption p {
     line-height: 100%;
   }
   .reverse-fig h2 {
@@ -328,7 +390,7 @@ footer p {
 }
 
 @media (prefers-reduced-motion) {
-  .nav-bar a {
+  .nav-bar>* {
     transition: none;
   }
 }

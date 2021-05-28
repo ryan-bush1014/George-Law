@@ -6,7 +6,7 @@ let bannerContent = document.querySelector(".main-title");
 function parallax() {
     let offset = (window.scrollY / 2).toString() + "px";
     banner.style.backgroundPositionY = "-" + offset;
-    bannerContent.style.transform = `translate3d(-50%, ${offset}, 0) translateY(-50%)`;
+    bannerContent.style.transform = `translate3d(0, ${offset}, 0) translateY(-50%)`;
 }
 
 // https://since1979.dev/respecting-prefers-reduced-motion-with-javascript-and-react/

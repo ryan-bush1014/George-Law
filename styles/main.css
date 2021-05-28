@@ -341,7 +341,6 @@ footer p {
 @media (max-width: 70ch) {
   .nav-bar {
     z-index: 3;
-    height: 3.5rem;
   }
   .hamburger-container {
     display: flex;
@@ -364,6 +363,7 @@ footer p {
     top: calc(100% - 3rem);
   }
   .sub-content-center {
+    margin-top: 5rem;
     z-index: 2;
   }
   .first, .second, .third {

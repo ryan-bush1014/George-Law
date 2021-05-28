@@ -1,4 +1,5 @@
 history.scrollRestoration = "manual";
+window.location.hash='';
 
 let banner = document.querySelector(".banner");
 let bannerContent = document.querySelector(".main-title");
@@ -18,4 +19,6 @@ if (!window.mobileCheck() && !mediaQuery.matches) {
     banner.classList.add("parallax");
     bannerContent.classList.add("parallax");
     document.addEventListener("scroll", parallax, { passive: true });
+} else if (mediaQuery.matches) {
+    document.documentElement.style.scrollBehavior = "initial";
 }

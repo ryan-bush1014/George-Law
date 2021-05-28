@@ -304,6 +304,7 @@ footer p {
 
 @media (max-width: 70ch) {
   .nav-bar {
+    height: 0;
     z-index: 3;
   }
   .hamburger-container {

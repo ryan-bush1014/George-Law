@@ -61,24 +61,23 @@
   </div>
   <div class="sub-content">
     <div class="nav-bar">
-      <a href="#menu">
-        <div id="menu" class="hamburger-container"
-          onclick="document.querySelector('.links').classList.toggle('open'); document.querySelector('.nav-bar').classList.toggle('toggled');">
-          <div class="hamburger">
-            <div class="first"></div>
-            <div class="second"></div>
-            <div class="third"></div>
-          </div>
+      <a href="#menu"></a>
+      <label id="menu" class="hamburger-container" for="menu-toggle" onclick="location.hash='menu'">
+        <div class="hamburger">
+          <div class="first"></div>
+          <div class="second"></div>
+          <div class="third"></div>
         </div>
-      </a>
+      </label>
+      <input type="checkbox" id="menu-toggle">
       <div class="links">
-        <a href="#about" onclick="document.querySelector('.links').classList.remove('open');" style="--animation-order: 1;">
+        <a href="#about" onclick="document.querySelector('#menu-toggle').click()">
           <h3>About</h3>
         </a>
-        <a href="#services" onclick="document.querySelector('.links').classList.remove('open');" style="--animation-order: 2;">
+        <a href="#services" onclick="document.querySelector('#menu-toggle').click()">
           <h3>Services</h3>
         </a>
-        <a href="#contact" onclick="document.querySelector('.links').classList.remove('open');" style="--animation-order: 3;">
+        <a href="#contact" onclick="document.querySelector('#menu-toggle').click()">
           <h3>Contact</h3>
         </a>
       </div>

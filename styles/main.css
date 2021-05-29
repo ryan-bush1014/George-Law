@@ -154,9 +154,10 @@ h2 {
   height: 0.1em;
   background-color: var(--text-accent);
   display: block;
-  position: absolute;
+  position: relative;
   left: 50%;
   margin-top: 0.5em;
+  margin-bottom: 1em;
   transition: all var(--slow-time);
   transform: translateX(-50%) scale(1);
   opacity: 1;

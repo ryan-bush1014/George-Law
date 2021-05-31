@@ -222,11 +222,6 @@ figure h2 {
   flex: 2 2 50%;
 }
 
-.caption li {
-  font-size: 16pt;
-  text-align: left;
-}
-
 .caption ul {
   margin: 0;
 }
@@ -369,9 +364,6 @@ footer p {
     z-index: 3;
     pointer-events: all;
   }
-  .caption p {
-    line-height: 100%;
-  }
   .reverse-fig h2 {
     text-align: left;
   }
@@ -404,4 +396,33 @@ footer p {
   .links a:hover {
     background-color: rgba(40, 40, 40, 0.75);
   }
+}
+
+li {
+  padding-left: 1em;
+  font-size: 16pt;
+  text-align: left;
+  line-height: 200%;
+}
+
+::marker {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.phone::marker {
+  content: '\f879';
+}
+
+.fax::marker {
+  content: '\f1ac';
+}
+
+.address::marker {
+  content: '\f3c5';
+}
+
+.email::marker {
+  content: '\f1d8';
 }

@@ -151,7 +151,7 @@ html, body {
   content: "";
   width: 60%;
   height: 0.1em;
-  border-radius: 100vw; 
+  border-radius: 100vw;
   background-color: var(--text-accent);
   display: block;
   position: relative;
@@ -253,7 +253,7 @@ figure h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
-  text-shadow: 0.5vh 0.5vh 0.5vh black;
+  text-shadow: 0.15em 0.15em 0.15em black;
   font-weight: bold;
   justify-content: center;
   color: var(--text-accent);
@@ -269,7 +269,7 @@ figure h2 {
   width: 8em;
   height: 8em;
   border-radius: 50%;
-  box-shadow: white 0 0 0 0.5rem;
+  box-shadow: white 0 0 0 0.5em, black 0.15em 0.15em 0.25em 0.5em;
 }
 
 .main-title h1 {
@@ -432,7 +432,7 @@ footer p {
   }
 }
 
-@media (hover: hover) and (min-width: 1101px) and (prefers-reduced-motion: no-preference){
+@media (hover: hover) and (min-width: 1101px) and (prefers-reduced-motion: no-preference) {
   .fig-img img:hover {
     transform: perspective(1600px) rotateY(5deg);
   }

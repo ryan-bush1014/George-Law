@@ -234,6 +234,10 @@ figure h2 {
   padding-top: 0;
 }
 
+.emph {
+  font-size: 1.2em;
+}
+
 /* Main title of page */
 
 .main-title {
@@ -252,7 +256,7 @@ figure h2 {
   font-weight: bold;
   justify-content: center;
   color: var(--text-accent);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
 }
 
 .main-title h1 {

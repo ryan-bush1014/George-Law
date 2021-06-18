@@ -6,7 +6,8 @@ let bannerContent = document.querySelector(".banner-content");
 
 function parallax() {
     let offset = (window.scrollY / 2).toString() + "px";
-    banner.style.backgroundPositionY = "-" + offset;
+    let far_offset = (window.scrollY / 3).toString() + "px";
+    banner.style.backgroundPositionY = "-" + far_offset;
     bannerContent.style.transform = `translate3d(0, ${offset}, 0) translate(-50%, -50%)`;
 }
 

@@ -152,6 +152,7 @@ html, body {
   content: "";
   width: 60%;
   height: 0.1em;
+  border-radius: 100vw; 
   background-color: var(--text-accent);
   display: block;
   position: relative;
@@ -159,12 +160,12 @@ html, body {
   margin-top: 0.5em;
   margin-bottom: 1em;
   transition: all var(--slow-time);
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scaleX(1);
   opacity: 1;
 }
 
 .section.invis::after {
-  transform: translateX(-50%) scale(0);
+  transform: translateX(-50%) scaleX(0);
 }
 
 figure {
@@ -243,7 +244,7 @@ figure h2 {
   flex-direction: column;
   width: max-content;
   max-width: 100%;
-  top: calc(50vh - 3rem);
+  top: calc(50vh - 2rem);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;

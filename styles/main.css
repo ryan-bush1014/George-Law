@@ -432,7 +432,7 @@ footer p {
   }
 }
 
-@media (hover: hover) and (min-width: 1101px) {
+@media (hover: hover) and (min-width: 1101px) and (prefers-reduced-motion: no-preference){
   .fig-img img:hover {
     transform: perspective(1600px) rotateY(5deg);
   }

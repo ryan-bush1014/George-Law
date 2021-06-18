@@ -2,7 +2,7 @@ history.scrollRestoration = "manual";
 window.location.hash='';
 
 let banner = document.querySelector(".banner");
-let bannerContent = document.querySelector(".main-title");
+let bannerContent = document.querySelector(".banner-content");
 
 function parallax() {
     let offset = (window.scrollY / 2).toString() + "px";

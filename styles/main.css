@@ -51,7 +51,7 @@ html, body {
   background-attachment: fixed;
 }
 
-.main-title.parallax {
+.banner-content.parallax {
   position: absolute;
 }
 
@@ -240,12 +240,14 @@ figure h2 {
 
 /* Main title of page */
 
-.main-title {
+.banner-content {
   box-sizing: border-box;
   padding: 1em;
   position: fixed;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
   width: max-content;
   max-width: 100%;
   top: calc(50vh - 2rem);
@@ -257,6 +259,18 @@ figure h2 {
   justify-content: center;
   color: var(--text-accent);
   font-size: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.main-title {
+  width: max-content;
+  max-width: 100%;
+}
+
+.banner-content img {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  box-shadow: white 0 0 0 0.5rem;
 }
 
 .main-title h1 {
@@ -321,6 +335,9 @@ footer p {
   }
   .fig-img img {
     border-radius: 0px;
+  }
+  .banner-content {
+    flex-direction: column;
   }
 }
 

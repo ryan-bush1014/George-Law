@@ -1,5 +1,8 @@
+
+cssVars();
+
 history.scrollRestoration = "manual";
-window.location.hash='';
+window.location.hash= "";
 
 var banner = document.querySelector(".banner");
 var bannerContent = document.querySelector(".banner-content");

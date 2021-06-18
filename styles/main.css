@@ -36,7 +36,7 @@ html, body {
   width: 100%;
   height: calc(100vh - 3rem);
   position: fixed;
-  filter: blur(10px) saturate(200%);
+  filter: blur(0.92vh) saturate(200%);
   background-image: url("../assets/building.jpg");
   background-attachment: scroll;
   background-size: cover;

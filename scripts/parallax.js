@@ -1,12 +1,12 @@
 history.scrollRestoration = "manual";
 window.location.hash='';
 
-let banner = document.querySelector(".banner");
-let bannerContent = document.querySelector(".banner-content");
+var banner = document.querySelector(".banner");
+var bannerContent = document.querySelector(".banner-content");
 
 function parallax() {
-    let offset = (window.scrollY / 2).toString() + "px";
-    let far_offset = (window.scrollY / 3).toString() + "px";
+    var offset = (window.scrollY / 2).toString() + "px";
+    var far_offset = (window.scrollY / 3).toString() + "px";
     banner.style.backgroundPositionY = "-" + far_offset;
     bannerContent.style.transform = `translate3d(0, ${offset}, 0) translate(-50%, -50%)`;
 }

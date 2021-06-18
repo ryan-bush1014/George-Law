@@ -1,14 +1,14 @@
-let figs = document.getElementsByTagName("figure");
-let secs = document.getElementsByClassName("section");
-let lines = document.getElementsByTagName("hr");
+var figs = document.getElementsByTagName("figure");
+var secs = document.getElementsByClassName("section");
+var lines = document.getElementsByTagName("hr");
 
-let options = {
+var options = {
     root: null,
     rootMargin: '0px',
     threshold: 0.05
 }
 
-let callback = (entries, observer) => {
+var callback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.remove("invis");
@@ -18,10 +18,10 @@ let callback = (entries, observer) => {
 
 
 
-let observer = new IntersectionObserver(callback, options);
+var observer = new IntersectionObserver(callback, options);
 
 function addObserver(elems) {
-    for (let i = 0; i < elems.length; ++i) {
+    for (var i = 0; i < elems.length; ++i) {
         elems[i].classList.add("invis");
         observer.observe(elems[i]);
     }

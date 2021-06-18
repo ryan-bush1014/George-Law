@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --main-bg: #333333;
   --dark-bg: #111111;
@@ -48,8 +52,7 @@ html, body {
 }
 
 .main-title.parallax {
-  position: relative;
-  margin-top: 0;
+  position: absolute;
 }
 
 /* .down-arrow {
@@ -65,9 +68,9 @@ html, body {
 /* Convenient way to increase size of certain letters
    (e.g. *G*eorge *R*adojcic) */
 
-.emph-font {
+/* .emph-font {
   font-size: 150%;
-}
+} */
 
 /* Main content of page, overlaps banner when scrolled */
 
@@ -134,18 +137,15 @@ html, body {
   position: relative;
   transition: all var(--slow-time);
   letter-spacing: 5pt;
+  font-size: 2rem;
+  text-align: center;
   color: var(--text-accent);
+  margin-top: 1.5em;
 }
 
 .section span {
   position: absolute;
   top: -80px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 24pt;
-  font-weight: bold;
 }
 
 .section::after {
@@ -175,6 +175,7 @@ figure {
   padding: 10px;
   margin-top: 10px;
   transition: all var(--appear-time);
+  gap: 3em;
 }
 
 .invis {
@@ -205,7 +206,9 @@ figure {
 .fig-img img {
   width: 100%;
   display: block;
-  border-radius: 15px;
+  border-radius: 16px;
+  transform: perspective(1600px) rotateY(0deg);
+  transition: transform 500ms ease;
 }
 
 figure h2 {
@@ -233,21 +236,41 @@ figure h2 {
 /* Main title of page */
 
 .main-title {
-  user-select: none;
+  box-sizing: border-box;
+  padding: 1em;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  max-width: 100%;
   top: calc(50vh - 3rem);
-  width: 100%;
-  text-align: center;
-  font-family: "Cinzel", serif;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
   text-shadow: 0.5vh 0.5vh 0.5vh black;
-  transform: translate3d(0, 0, 0) translateY(-50%);
   font-weight: bold;
-  margin-top: -40px;
-  font-size: 24pt;
+  justify-content: center;
   color: var(--text-accent);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.main-title h1 {
+  /* margin-bottom: 0.75em; */
+  font-family: 'Cinze Serif';
+  font-size: 3em;
+}
+
+.main-title h2 {
+  font-size: 1em;
+}
+
+.main-title h3 {
+  font-size: 1em;
 }
 
 .main-title * {
+  width: max-content;
+  max-width: 100%;
   margin-top: 0.2vh;
   margin-bottom: 0.2vh;
 }
@@ -285,6 +308,7 @@ footer p {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    gap: 0;
     /* text-align: center; */
   }
   .reverse-fig {
@@ -292,9 +316,6 @@ footer p {
   }
   .fig-img img {
     border-radius: 0px;
-  }
-  .main-title {
-    font-size: 18pt;
   }
 }
 
@@ -321,13 +342,11 @@ footer p {
     position: absolute;
     z-index: 10;
   }
-
   .nav-label {
     position: relative;
     width: 100%;
     height: 100%;
   }
-
   .hamburger {
     --bar-width: 3rem;
     --hamburger-height: 2rem;
@@ -358,7 +377,7 @@ footer p {
     margin-top: -1px;
     pointer-events: none;
   }
-  #menu-toggle:checked + .links{
+  #menu-toggle:checked+.links {
     transform: translate3d(0, 3rem, 0);
     opacity: 1;
     z-index: 3;
@@ -381,14 +400,23 @@ footer p {
   .fig-img img {
     border-radius: 0px;
   }
-  .main-title {
-    font-size: 18pt;
+  figure p {
+    text-align: left;
   }
 }
 
 @media (prefers-reduced-motion) {
   .nav-bar>* {
     transition: none;
+  }
+}
+
+@media (hover: hover) and (min-width: 1101px) {
+  .fig-img img:hover {
+    transform: perspective(1600px) rotateY(5deg);
+  }
+  .reverse-fig .fig-img img:hover {
+    transform: perspective(1600px) rotateY(-5deg);
   }
 }
 
@@ -402,27 +430,31 @@ li {
   padding-left: 1em;
   font-size: 16pt;
   text-align: left;
-  line-height: 200%;
+  line-height: 2.5em;
+  list-style-type: none;
+  position: relative;
 }
 
-::marker {
+li::before {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.5em;
   font-weight: 900;
+  position: absolute;
+  margin-left: -1.5em;
 }
 
-.phone::marker {
-  content: '\f879';
+.phone::before {
+  content: '\f879 ';
 }
 
-.fax::marker {
-  content: '\f1ac';
+.fax::before {
+  content: '\f1ac ';
 }
 
-.address::marker {
-  content: '\f3c5';
+.address::before {
+  content: '\f3c5 ';
 }
 
-.email::marker {
-  content: '\f1d8';
+.email::before {
+  content: '\f1d8 ';
 }

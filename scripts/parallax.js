@@ -7,7 +7,7 @@ let bannerContent = document.querySelector(".main-title");
 function parallax() {
     let offset = (window.scrollY / 2).toString() + "px";
     banner.style.backgroundPositionY = "-" + offset;
-    bannerContent.style.transform = `translate3d(0, ${offset}, 0) translateY(-50%)`;
+    bannerContent.style.transform = `translate3d(0, ${offset}, 0) translate(-50%, -50%)`;
 }
 
 // https://since1979.dev/respecting-prefers-reduced-motion-with-javascript-and-react/
@@ -19,6 +19,6 @@ if (!window.mobileCheck() && !mediaQuery.matches) {
     banner.classList.add("parallax");
     bannerContent.classList.add("parallax");
     document.addEventListener("scroll", parallax, { passive: true });
-} else if (mediaQuery.matches) {
-    document.documentElement.style.scrollBehavior = "initial";
+} else if (window.mobileCheck()) {
+    bannerContent.style.marginTop = "-5vh";
 }

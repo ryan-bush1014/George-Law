@@ -205,6 +205,7 @@ figure {
 
 .fig-img img {
   width: 100%;
+  height: auto;
   display: block;
   border-radius: 16px;
   transform: perspective(1600px) rotateY(0deg);
